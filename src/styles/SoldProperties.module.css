@@ -1,0 +1,145 @@
+.soldSection {
+  padding: 4rem 0;
+  background-color: var(--light-gray);
+}
+
+.title {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--dark-gray);
+  margin-bottom: 3rem;
+}
+
+.soldGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.soldCard {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.soldCard:hover {
+  transform: translateY(-5px);
+}
+
+.soldImage {
+  position: relative;
+  height: 180px;
+  overflow: hidden;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--medium-gray);
+  background-image: linear-gradient(45deg, var(--light-gray) 25%, transparent 25%, transparent 50%, var(--light-gray) 50%, var(--light-gray) 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
+}
+
+.soldBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 4px;
+}
+
+.soldContent {
+  padding: 1.5rem;
+}
+
+.soldTitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.soldLocation {
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.soldDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.soldPrice {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.soldDate {
+  font-size: 0.85rem;
+  color: var(--dark-gray);
+}
+
+.testimonial {
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  text-align: center;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.quote::before {
+  content: '"';
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-right: 0.25rem;
+  vertical-align: -0.4rem;
+}
+
+.author {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.viewAllContainer {
+  text-align: center;
+}
+
+.viewAllBtn {
+  min-width: 200px;
+}
+
+@media (max-width: 768px) {
+  .soldGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .testimonial {
+    padding: 1.5rem;
+  }
+  
+  .quote {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,126 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+.nav {
+  display: flex;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.navLink {
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+}
+
+.phone {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menuIcon {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.menuIcon::before,
+.menuIcon::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: var(--text-color);
+  transition: all 0.3s ease-in-out;
+}
+
+.menuIcon::before {
+  transform: translateY(-8px);
+}
+
+.menuIcon::after {
+  transform: translateY(8px);
+}
+
+@media (max-width: 768px) {
+  .menuButton {
+    display: block;
+    z-index: 101;
+  }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    background-color: white;
+    flex-direction: column;
+    padding: 5rem 2rem;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav.active {
+    right: 0;
+  }
+
+  .navList {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contact {
+    display: none;
+  }
+
+  .menuButton.active .menuIcon {
+    background: transparent;
+  }
+
+  .menuButton.active .menuIcon::before {
+    transform: rotate(45deg);
+  }
+
+  .menuButton.active .menuIcon::after {
+    transform: rotate(-45deg);
+  }
+}
